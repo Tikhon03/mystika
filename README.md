@@ -26,6 +26,7 @@ A bignum array is an array of bignums that is stored as an array of 32-bit integ
     BA←{BA} cat BA ⍝ ⍪ over bignums
     BA←rav BA ⍝ , over bignums
     BA←{A} trn BA ⍝ ⍉ over bignums
+    BA←{A} rot BA ⍝ ⌽ over bignums
     BA←A sqd BA ⍝ ⌷ over bignums
     A←BA eql BA ⍝ = over Bignums
     A←BA neq BA ⍝ ≠ over Bignums
