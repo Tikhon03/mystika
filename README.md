@@ -75,7 +75,8 @@ the base, which must have the form B for a real bignum or 0JB for a complex bign
 
 ### Numerical Algorithms
     
-    PA←PA pmul PA       ⍝ × over bigpolys
+    PA←PA pmu PA       ⍝ × over bigpolys
+	BA←PA fof BA       ⍝ f(x)
     MA←mrp MA ⍝ Miller-Rabin primality test
     MA←sgp MA ⍝ Sophie-Germain primality test
     
