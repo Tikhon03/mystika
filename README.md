@@ -13,10 +13,12 @@ Here are the verbs, nouns, adverbs, and conjunctions provided by this project.
 
 ### Data Structures
 
-    BA ⍝ Bignum Array
-    PA ⍝ Bigpoly Array
-    bf ⍝ Bignum function
-    NBA ⍝ Nested bignum Array
+    BA  ⍝ Bignum Array
+    PA  ⍝ Bigpoly Array
+    bf  ⍝ Bignum Function
+    NBA ⍝ Nested Bignum Array
+    NCA ⍝ Nested Character Array
+    A01 ⍝ Binary Array
 
 A bignum array is an array where the 0th axis is used for the places of a number in a given base, and the first 3 elements of that axis are reserved for metadata.
 The metadata has the following format:
@@ -69,6 +71,11 @@ A bigpoly array is a special type of bignum array in which the 1st axis is reser
     BA←cis BA           ⍝ 12○ over bignums
     BA←tan BA           ⍝ 3○ over bignums
     BA←sin BA           ⍝ 1○ over bignums
+    NCA←dec BA          ⍝ ⊥ over bignums
+    BA←enc NCA          ⍝ ⊤ over bignums
+    BA←exp BA           ⍝ monadic * over bignums
+    BA←pie BA           ⍝ modadic ○ over bignums
+    BA←tal BA           ⍝ modadic , over bignums 
 
 ### APL Primitive Operators
 
@@ -88,8 +95,12 @@ A bigpoly array is a special type of bignum array in which the 1st axis is reser
     BA←sgp BA           ⍝ Sophie-Germain primality test
     BA←{BA}rsg BA       ⍝ Creates random Sophie-Germain prime
     BA←{BA}rpr BA       ⍝ creates random prime
+    BA←BA gcd BA        ⍝ extended binary gcd
+    BA←BA (BA mex) BA   ⍝ modular exponentiation, exp (mod mex) base
     
 ### Hashing
+
+    A01←sha A01  ⍝ sha3
 
 ### Cyphers
 
@@ -101,7 +112,9 @@ A bigpoly array is a special type of bignum array in which the 1st axis is reser
 ### Application Utilities
 
     H←{B} hex A
-    A or BA←b64 BA or A ⍝ base 64 
+    A or BA←b64 BA or A ⍝ base 64
+    BA←A mov BA         ⍝ move the floating point
+    BA←n pla BA         ⍝ change number of places
 
 Converts an integer array S into a hexadecimal string representing the data in row major order. Each element is assumed to represent B bits of data. If B is not provided, then the largest value in the array is used to calculate the number of bits to use per element.
 
